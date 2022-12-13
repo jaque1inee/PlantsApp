@@ -14,7 +14,7 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
     lazy var container: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(hex: "#32B768")
         
         return view
     }()
@@ -51,7 +51,20 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
         
         return myPlantsTableView
     }()
-
+    
+    lazy var backMenuPrincipal: UIButton = {
+        let backMenuPrincipal = UIButton()
+        backMenuPrincipal.translatesAutoresizingMaskIntoConstraints =  false
+        backMenuPrincipal.translatesAutoresizingMaskIntoConstraints = false
+        backMenuPrincipal.backgroundColor = UIColor(hex: "#32B768")
+        backMenuPrincipal.layer.cornerRadius = 20
+        backMenuPrincipal.addTarget(self, action: #selector(backMenu), for: .touchUpInside)
+        backMenuPrincipal.setTitle("Menu Principal", for: .normal)
+        backMenuPrincipal.tag = 1
+        return backMenuPrincipal
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createViews()
@@ -62,6 +75,14 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
         presenter.getMyPlantList()
         
     }
+    
+    @objc private func backMenu() {
+        let menuVC = MenuViewController()
+        let nagVC = UINavigationController(rootViewController: menuVC)
+        nagVC.modalPresentationStyle = .fullScreen
+        present(nagVC, animated: true)
+    }
+
 
     
     func createViews() {
@@ -69,6 +90,7 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
         container.addSubview(self.titleMyPlants)
         container.addSubview(self.imageUser)
         container.addSubview(self.myPlantsTableView)
+        container.addSubview(self.backMenuPrincipal)
     }
     
     func createConstraints() {
@@ -93,7 +115,12 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
             self.myPlantsTableView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             self.myPlantsTableView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             self.myPlantsTableView.topAnchor.constraint(equalTo: imageUser.topAnchor, constant: 80),
-            self.myPlantsTableView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: 50)
+            self.myPlantsTableView.bottomAnchor.constraint(equalTo: backMenuPrincipal.topAnchor, constant: 50),
+            
+            self.backMenuPrincipal.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: 20),
+            self.backMenuPrincipal.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: -20),
+            self.backMenuPrincipal.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: 0),
+            self.backMenuPrincipal.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
     
@@ -115,11 +142,18 @@ extension MyPlantsViewController: UITableViewDelegate, UITableViewDataSource {
         let plant = presenter.plantList[indexPath.row]
         
         cell.setupViewCell(plant: plant)
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+          if editingStyle == .delete {
+
+            self.presenter.plantList.remove(at: indexPath.row)
+            self.myPlantsTableView.deleteRows(at: [indexPath], with: .automatic)
+          }
     }
 }

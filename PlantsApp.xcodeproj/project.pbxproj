@@ -30,7 +30,6 @@
 		417EE16B293450F000C3C86A /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE16A293450F000C3C86A /* PlantModel.swift */; };
 		417EE17A2935A42C00C3C86A /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE1792935A42C00C3C86A /* RegisterUserViewController.swift */; };
 		417EE17F29365A4800C3C86A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE17E29365A4800C3C86A /* DataManager.swift */; };
-		417EE18129365ADA00C3C86A /* RegisterUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE18029365ADA00C3C86A /* RegisterUserPresenter.swift */; };
 		4185CA3329481C6100DBD58C /* MyPlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185CA3229481C6100DBD58C /* MyPlantsPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +78,6 @@
 		417EE16A293450F000C3C86A /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		417EE1792935A42C00C3C86A /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		417EE17E29365A4800C3C86A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		417EE18029365ADA00C3C86A /* RegisterUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserPresenter.swift; sourceTree = "<group>"; };
 		4185CA3229481C6100DBD58C /* MyPlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				417EE1722935760000C3C86A /* View */,
-				417EE171293575F800C3C86A /* Presenter */,
 			);
 			path = MenuPrinicipal;
 			sourceTree = "<group>";
@@ -250,13 +247,6 @@
 				417EE10729316AA000C3C86A /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		417EE171293575F800C3C86A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		417EE1722935760000C3C86A /* View */ = {
@@ -298,17 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				417EE1782935A37500C3C86A /* View */,
-				417EE1772935A36E00C3C86A /* Presenter */,
 			);
 			path = Register;
-			sourceTree = "<group>";
-		};
-		417EE1772935A36E00C3C86A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				417EE18029365ADA00C3C86A /* RegisterUserPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		417EE1782935A37500C3C86A /* View */ = {
@@ -472,7 +453,6 @@
 				415D6DD7293D95DA009D3809 /* RegisterPlantPresenter.swift in Sources */,
 				417EE14329344B1800C3C86A /* UIColor+Extensions.swift in Sources */,
 				415D6DD42939A348009D3809 /* MyPlants.swift in Sources */,
-				417EE18129365ADA00C3C86A /* RegisterUserPresenter.swift in Sources */,
 				417EE1342931BE7000C3C86A /* MenuViewController.swift in Sources */,
 				415D6DD229399D0F009D3809 /* ConfirmationViewController.swift in Sources */,
 				415D6DD9293D9A4D009D3809 /* DetailsPlantViewController.swift in Sources */,

@@ -58,7 +58,6 @@ class DetailsPlantViewController: UIViewController {
         return descriptionPlant
     }()
     
-    
     lazy var cadastrarPlantaButton: UIButton = {
         let cadastrarPlantaButton = UIButton()
         cadastrarPlantaButton.translatesAutoresizingMaskIntoConstraints = false

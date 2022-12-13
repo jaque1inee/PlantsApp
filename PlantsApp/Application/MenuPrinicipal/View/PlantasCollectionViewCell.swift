@@ -12,7 +12,6 @@ class PlantasCollectionViewCell: UICollectionViewCell {
     lazy var container: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = .lightGray
         view.backgroundColor = UIColor(hex: "F0F0F0")
         view.layer.cornerRadius = 10
         return view

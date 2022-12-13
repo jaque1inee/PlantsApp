@@ -9,7 +9,6 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var presenter: RegisterUserPresenter = RegisterUserPresenter()
     var database = DataBase.shared
     let localPlant = ["Quarto", "Cozinha", "Sala", "Banheiro", "Varanda"]
     
@@ -43,10 +42,7 @@ class MenuViewController: UIViewController {
         imageUser.layer.masksToBounds = true
         imageUser.contentMode = .scaleAspectFill
         imageUser.image = UIImage(named: "user")
-        
-//        imageUser.image.layer.cor
-        
-        
+
         return imageUser
         
     }()
@@ -195,7 +191,6 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlantasCollectionViewCell", for: indexPath) as? PlantasCollectionViewCell else  {return UICollectionViewCell()}
-            //            cell.setupViewCell(with: PlantMenu)
             cell.setupViewCell(with: database.imageMenu [indexPath.row])
             
             return cell
@@ -203,15 +198,18 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-        let menuVC = DetailsPlantViewController()
-        menuVC.modalPresentationStyle = .fullScreen
-        menuVC.plant = database.imageMenu[indexPath.row]
-        self.navigationController?.pushViewController(menuVC, animated: true)
+        if collectionView == menuCollectionView {
+            collectionView.deselectItem(at: indexPath, animated: true)
+    
 
-        
-//        print("Selected Cell: \(indexPath.row)")
+        } else {
+            let menuVC = DetailsPlantViewController()
+            menuVC.modalPresentationStyle = .fullScreen
+            menuVC.plant = database.imageMenu[indexPath.row]
+            self.navigationController?.pushViewController(menuVC, animated: true)
+        }
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == menuCollectionView {
             

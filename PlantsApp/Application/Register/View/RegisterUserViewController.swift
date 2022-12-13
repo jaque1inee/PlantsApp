@@ -8,8 +8,7 @@
 import UIKit
 
 class RegisterUserViewController: UIViewController {
-    
-    var presenter: RegisterUserPresenter = RegisterUserPresenter()
+
     
     lazy var container: UIView = {
         let container = UIView()
@@ -69,7 +68,7 @@ class RegisterUserViewController: UIViewController {
         creatViews()
         creatConstraints()
         navigationController?.setNavigationBarHidden(true, animated: false)
-        presenter.delegate = self
+//        presenter.delegate = self
     }
     
     @objc private func confirmarButton() {
@@ -86,13 +85,7 @@ class RegisterUserViewController: UIViewController {
                 UIAlertAction in
                 NSLog("OK Pressed")
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.destructive) {
-                UIAlertAction in
-                NSLog("Cancel Pressed")
-            }
             alertController.addAction(okAction)
-            alertController.addAction(cancelAction)
-
             self.present(alertController, animated: true, completion: nil)
             print("inserir nome")
             
@@ -145,17 +138,4 @@ class RegisterUserViewController: UIViewController {
             self.buttonConfirmar.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
-}
-
-extension RegisterUserViewController: RegisterUserPresenterDelegate {
-    func didCreatedUser() {
-        
-        self.dismiss(animated: true, completion: nil)
-        
-    }
-    
-    func didFailureCreatingUser(error: String) {
-        print(error)
-    }
-    
 }

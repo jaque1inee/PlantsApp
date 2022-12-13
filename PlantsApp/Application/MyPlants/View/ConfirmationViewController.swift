@@ -55,7 +55,7 @@ class ConfirmationViewController: UIViewController {
         confirmarButton.backgroundColor = UIColor(hex: "#32B768")
         confirmarButton.layer.cornerRadius = 20
         confirmarButton.addTarget(self, action: #selector(goMyplants), for: .touchUpInside)
-        confirmarButton.setTitle("Muito obrigado!", for: .normal)
+        confirmarButton.setTitle("Minhas Plantas", for: .normal)
         confirmarButton.tag = 1
         return confirmarButton
     }()
@@ -77,14 +77,13 @@ class ConfirmationViewController: UIViewController {
         super.viewDidLoad()
         createViews()
         createConstraints()
-
     }
     
     
     @objc private func goMyplants() {
         let menuVC = MyPlantsViewController()
         let nagVC = UINavigationController(rootViewController: menuVC)
-        nagVC.modalPresentationStyle = .automatic
+        nagVC.modalPresentationStyle = .fullScreen
         present(nagVC, animated: true)
     }
       
@@ -137,7 +136,6 @@ class ConfirmationViewController: UIViewController {
             self.backMenuButton.widthAnchor.constraint(equalToConstant: 232),
             self.backMenuButton.heightAnchor.constraint(equalToConstant: 56),
             
-        
         ])
     }
 }
