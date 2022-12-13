@@ -19,7 +19,7 @@ class MyPlantsPresenter {
     var plantList: [Plant] = []
     
     func getMyPlantList() {
-
+        
         plantList = database.myPlants
         delegate?.didGetMyPlants()
     }

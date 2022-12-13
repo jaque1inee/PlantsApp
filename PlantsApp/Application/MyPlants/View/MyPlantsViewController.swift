@@ -73,7 +73,6 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
         myPlantsTableView.dataSource = self
         presenter.delegate = self
         presenter.getMyPlantList()
-        
     }
     
     @objc private func backMenu() {
@@ -83,8 +82,6 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
         present(nagVC, animated: true)
     }
 
-
-    
     func createViews() {
         view.addSubview(self.container)
         container.addSubview(self.titleMyPlants)
@@ -148,12 +145,17 @@ extension MyPlantsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
           if editingStyle == .delete {
-
+              myPlantsTableView.beginUpdates()
             self.presenter.plantList.remove(at: indexPath.row)
             self.myPlantsTableView.deleteRows(at: [indexPath], with: .automatic)
+              myPlantsTableView.endUpdates()
+              
           }
     }
 }

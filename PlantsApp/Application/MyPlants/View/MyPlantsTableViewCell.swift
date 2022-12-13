@@ -71,9 +71,6 @@ class MyPlantsTableViewCell: UITableViewCell {
             self.myNamePlant.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -40),
             self.myNamePlant.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
             self.myNamePlant.centerYAnchor.constraint(equalTo: container.centerYAnchor)
-
         ])
-        
     }
-
 }

@@ -71,8 +71,6 @@ class ConfirmationViewController: UIViewController {
         return backMenuButton
     }()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         createViews()

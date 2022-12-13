@@ -72,4 +72,6 @@ class DataBase {
     ]
     
     var myPlants: [Plant] = []
+    
+    var userName: String = ""
 }

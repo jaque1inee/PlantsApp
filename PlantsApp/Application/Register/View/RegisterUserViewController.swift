@@ -8,8 +8,9 @@
 import UIKit
 
 class RegisterUserViewController: UIViewController {
-
     
+    var database = DataBase.shared
+
     lazy var container: UIView = {
         let container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -68,16 +69,14 @@ class RegisterUserViewController: UIViewController {
         creatViews()
         creatConstraints()
         navigationController?.setNavigationBarHidden(true, animated: false)
-//        presenter.delegate = self
     }
     
     @objc private func confirmarButton() {
         
-        
         let menuVC = MenuViewController()
-        menuVC.name = textFieldUser.text
+        menuVC.database.userName = textFieldUser.text ?? ""
         
-        if ((menuVC.name?.count) == 0) {
+        if ((menuVC.database.userName.count) == 0) {
             
             let alertController = UIAlertController(title: "", message: "Digite seu nome", preferredStyle: .alert)
             
@@ -92,7 +91,7 @@ class RegisterUserViewController: UIViewController {
         } else {
             
             let menuVC = MenuViewController()
-            menuVC.name = textFieldUser.text
+            menuVC.database.userName = textFieldUser.text ?? ""
             let nagVC = UINavigationController(rootViewController: menuVC)
             nagVC.modalPresentationStyle = .fullScreen
             present(nagVC, animated: true)

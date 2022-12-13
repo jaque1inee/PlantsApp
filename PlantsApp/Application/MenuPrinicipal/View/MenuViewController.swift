@@ -8,12 +8,11 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-    
+
     var database = DataBase.shared
+    
     let localPlant = ["Quarto", "Cozinha", "Sala", "Banheiro", "Varanda"]
-    
-    var name: String?
-    
+
     lazy var container: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -107,7 +106,9 @@ class MenuViewController: UIViewController {
         menuCollectionView.delegate = self
         plantasCollecctionView.dataSource = self
         plantasCollecctionView.delegate = self
-        userNameLabel.text = "Olá,\n\(name ?? "")"
+        userNameLabel.text = "Olá,\n\(database.userName )"
+       
+        
     }
     
     func createViews() {
@@ -143,7 +144,6 @@ class MenuViewController: UIViewController {
             
             self.imageUser.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -33),
             self.imageUser.topAnchor.constraint(equalTo: container.topAnchor, constant: 85),
-            //            self.imageUser.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor, constant: 80),
             self.imageUser.widthAnchor.constraint(equalToConstant: 60),
             self.imageUser.heightAnchor.constraint(equalToConstant: 60),
             

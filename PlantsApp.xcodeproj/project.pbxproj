@@ -180,7 +180,6 @@
 				417EE10329316AA000C3C86A /* AppDelegate.swift */,
 				417EE10529316AA000C3C86A /* SceneDelegate.swift */,
 				417EE10C29316AA100C3C86A /* Assets.xcassets */,
-				417EE14529344D6600C3C86A /* Jost600Semi.otf */,
 				417EE10E29316AA100C3C86A /* LaunchScreen.storyboard */,
 				417EE11129316AA100C3C86A /* Info.plist */,
 			);
@@ -280,6 +279,7 @@
 		417EE1752935A2E000C3C86A /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				417EE14529344D6600C3C86A /* Jost600Semi.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";

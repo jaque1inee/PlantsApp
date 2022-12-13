@@ -14,9 +14,6 @@ class DetailsPlantViewController: UIViewController {
     
     var plant: Plant?
 
-    var namePlant: [ MyPlants ] = []
-    
-    
     lazy var container: UIView = {
         let container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +36,6 @@ class DetailsPlantViewController: UIViewController {
     lazy var plantNameLabel: UILabel = {
         let plantNameLabel = UILabel()
         plantNameLabel.translatesAutoresizingMaskIntoConstraints = false
-//        plantNameLabel.text = "Name Plant"
         plantNameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 22)
         plantNameLabel.numberOfLines = 0
         plantNameLabel.textColor = .darkGray
@@ -103,33 +99,31 @@ class DetailsPlantViewController: UIViewController {
     func createConstraints() {
         NSLayoutConstraint.activate([
             
-            container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            container.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            container.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            container.topAnchor.constraint(equalTo: view.topAnchor),
+            self.container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            self.container.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            self.container.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            self.container.topAnchor.constraint(equalTo: view.topAnchor),
             
-            plantImage.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 60),
-            plantImage.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -60),
-            plantImage.topAnchor.constraint(equalTo: container.topAnchor, constant: 80),
-            plantImage.heightAnchor.constraint(equalToConstant: 400),
-            plantImage.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-//            plantImage.priority = UILayoutPriority(rawValue: 750),
+            self.plantImage.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 60),
+            self.plantImage.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -60),
+            self.plantImage.topAnchor.constraint(equalTo: container.topAnchor, constant: 80),
+            self.plantImage.heightAnchor.constraint(equalToConstant: 400),
+            self.plantImage.centerXAnchor.constraint(equalTo: container.centerXAnchor),
 
-            plantNameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
-            plantNameLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
-            plantNameLabel.topAnchor.constraint(equalTo: plantImage.bottomAnchor, constant: 10),
+            self.plantNameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
+            self.plantNameLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
+            self.plantNameLabel.topAnchor.constraint(equalTo: plantImage.bottomAnchor, constant: 10),
             
-            descriptionPlant.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
-            descriptionPlant.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
-            descriptionPlant.topAnchor.constraint(equalTo: plantNameLabel.bottomAnchor, constant: 10),
+            self.descriptionPlant.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
+            self.descriptionPlant.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
+            self.descriptionPlant.topAnchor.constraint(equalTo: plantNameLabel.bottomAnchor, constant: 10),
 
-            cadastrarPlantaButton.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
-            cadastrarPlantaButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
-            cadastrarPlantaButton.topAnchor.constraint(equalTo: descriptionPlant.bottomAnchor, constant: 10),
-            cadastrarPlantaButton.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -50),
+            self.cadastrarPlantaButton.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
+            self.cadastrarPlantaButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
+            self.cadastrarPlantaButton.topAnchor.constraint(equalTo: descriptionPlant.bottomAnchor, constant: 10),
+            self.cadastrarPlantaButton.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -50),
             self.cadastrarPlantaButton.widthAnchor.constraint(equalToConstant: 232),
             self.cadastrarPlantaButton.heightAnchor.constraint(equalToConstant: 56)
-
         ])
     }
 }
