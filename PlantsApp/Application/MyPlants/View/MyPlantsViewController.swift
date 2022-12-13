@@ -40,7 +40,7 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
         imageUser.contentMode = .scaleAspectFill
         imageUser.image = UIImage(named: "user")
         self.view.addSubview(imageUser)
-
+        
         return imageUser
     }()
     
@@ -81,7 +81,7 @@ class MyPlantsViewController: UIViewController, MyPlantsPresenterDelegate {
         nagVC.modalPresentationStyle = .fullScreen
         present(nagVC, animated: true)
     }
-
+    
     func createViews() {
         view.addSubview(self.container)
         container.addSubview(self.titleMyPlants)
@@ -150,12 +150,12 @@ extension MyPlantsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-          if editingStyle == .delete {
-              myPlantsTableView.beginUpdates()
-            self.presenter.plantList.remove(at: indexPath.row)
+        if editingStyle == .delete {
+            myPlantsTableView.beginUpdates()
+            self.presenter.removePlantFromList(at: indexPath.row)
             self.myPlantsTableView.deleteRows(at: [indexPath], with: .automatic)
-              myPlantsTableView.endUpdates()
-              
-          }
+            myPlantsTableView.endUpdates()
+            
+        }
     }
 }

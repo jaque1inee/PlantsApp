@@ -23,4 +23,10 @@ class MyPlantsPresenter {
         plantList = database.myPlants
         delegate?.didGetMyPlants()
     }
+    
+    func removePlantFromList(at index: Int) {
+        
+        database.myPlants.remove(at: index)
+        plantList.remove(at: index)
+    }
 }

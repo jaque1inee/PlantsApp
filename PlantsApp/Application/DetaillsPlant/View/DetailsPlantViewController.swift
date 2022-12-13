@@ -120,7 +120,6 @@ class DetailsPlantViewController: UIViewController {
 
             self.cadastrarPlantaButton.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
             self.cadastrarPlantaButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
-            self.cadastrarPlantaButton.topAnchor.constraint(equalTo: descriptionPlant.bottomAnchor, constant: 10),
             self.cadastrarPlantaButton.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -50),
             self.cadastrarPlantaButton.widthAnchor.constraint(equalToConstant: 232),
             self.cadastrarPlantaButton.heightAnchor.constraint(equalToConstant: 56)
