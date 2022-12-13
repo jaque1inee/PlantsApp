@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         
-        let initialViewController = ViewController()
+        let initialViewController = OnboardingViewController()
         let navController = UINavigationController(rootViewController: initialViewController)
         
         self.window?.rootViewController = navController

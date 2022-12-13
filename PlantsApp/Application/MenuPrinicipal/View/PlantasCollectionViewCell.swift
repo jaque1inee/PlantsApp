@@ -8,6 +8,7 @@
 import UIKit
 
 class PlantasCollectionViewCell: UICollectionViewCell {
+    
     lazy var container: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -34,16 +35,25 @@ class PlantasCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func setupViewCell(with imageMenu : PlantMenu){
+    lazy var blur: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        return blurView
+        
+    }()
+    
+    func setupViewCell(with imageMenu : Plant){
         createViews()
         createConstraints()
-        imagePlanta.image = imageMenu.image
-        titleLabel.text = imageMenu.nome
+        imagePlanta.image = imageMenu.plantImage
+        titleLabel.text = imageMenu.name
     }
 
     
     func createViews() {
         contentView.addSubview(container)
+        container.addSubview(blur)
         container.addSubview(imagePlanta)
         container.addSubview(titleLabel)
     }
@@ -66,9 +76,12 @@ class PlantasCollectionViewCell: UICollectionViewCell {
             
             self.titleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             self.titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            self.titleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10)
+            self.titleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10),
             
-
+            self.blur.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            self.blur.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            self.blur.topAnchor.constraint(equalTo: container.topAnchor),
+            self.blur.bottomAnchor.constraint(equalTo: container.topAnchor)
         ])
     }
 }

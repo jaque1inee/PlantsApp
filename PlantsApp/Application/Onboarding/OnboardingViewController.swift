@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OnboardingViewController: UIViewController {
 
     lazy var container: UIView = {
         let view = UIView()
@@ -87,12 +87,9 @@ class ViewController: UIViewController {
             self.container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             
             
-            
             self.label.topAnchor.constraint(equalTo: container.topAnchor, constant: 80),
             self.label.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -77),
             self.label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 77),
-            
-        
 
             self.imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             self.imageView.centerYAnchor.constraint(equalTo: container.centerYAnchor),

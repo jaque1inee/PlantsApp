@@ -11,7 +11,6 @@ class RegisterUserViewController: UIViewController {
     
     var presenter: RegisterUserPresenter = RegisterUserPresenter()
     
-    
     lazy var container: UIView = {
         let container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -22,11 +21,12 @@ class RegisterUserViewController: UIViewController {
     lazy var emojiView: UIImageView = {
         let emojiView = UIImageView()
         emojiView.translatesAutoresizingMaskIntoConstraints = false
-        emojiView.backgroundColor = .yellow
+        emojiView.image =  UIImage(named: "emoji")
         
         return emojiView
     }()
     
+
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -123,34 +123,26 @@ class RegisterUserViewController: UIViewController {
             self.container.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             self.container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             
-            //            self.emojiView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: 0),
-            //            self.emojiView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 0),
             self.emojiView.topAnchor.constraint(equalTo: container.topAnchor, constant: 126),
             self.emojiView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             self.emojiView.widthAnchor.constraint(equalToConstant: 40),
             self.emojiView.heightAnchor.constraint(equalToConstant: 40),
-            
             
             self.titleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -50),
             self.titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 50),
             self.titleLabel.topAnchor.constraint(equalTo: emojiView.topAnchor, constant: 50),
             self.titleLabel.widthAnchor.constraint(equalToConstant: 64),
             
-            
             self.textFieldUser.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -56),
             self.textFieldUser.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 56),
             self.textFieldUser.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 150),
             self.textFieldUser.widthAnchor.constraint(equalToConstant: 263),
-            
-            
             
             self.buttonConfirmar.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -72),
             self.buttonConfirmar.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 72),
             self.buttonConfirmar.topAnchor.constraint(equalTo: textFieldUser.topAnchor, constant: 40),
             self.buttonConfirmar.widthAnchor.constraint(equalToConstant: 232),
             self.buttonConfirmar.heightAnchor.constraint(equalToConstant: 56)
-            
-            
         ])
     }
 }

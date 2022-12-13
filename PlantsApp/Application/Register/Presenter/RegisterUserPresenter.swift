@@ -38,6 +38,8 @@ class RegisterUserPresenter {
             self.delegate?.didFailureCreatingUser(error: "Erro ao criar usuário. \(error), \(error.userInfo)")
         }
     }
+    
+    
 }
 
 

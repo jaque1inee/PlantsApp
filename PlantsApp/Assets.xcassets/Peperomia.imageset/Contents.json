@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "GroupPeperomia.png",
+      "filename" : "GroupPeperomia.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "GroupPeperomia-1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "GroupPeperomia-2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

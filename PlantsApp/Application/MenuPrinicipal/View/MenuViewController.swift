@@ -9,9 +9,8 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    
     var presenter: RegisterUserPresenter = RegisterUserPresenter()
-    
+    var database = DataBase.shared
     let localPlant = ["Quarto", "Cozinha", "Sala", "Banheiro", "Varanda"]
     
     var name: String?
@@ -28,7 +27,7 @@ class MenuViewController: UIViewController {
         let userNameLabel = UILabel()
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.textAlignment = .left
-        userNameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 25)
+        userNameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 22)
         userNameLabel.textColor = .gray
         userNameLabel.numberOfLines = 0
         print(userNameLabel)
@@ -40,7 +39,14 @@ class MenuViewController: UIViewController {
         let imageUser = UIImageView()
         imageUser.translatesAutoresizingMaskIntoConstraints = false
         imageUser.backgroundColor = .gray
-        imageUser.layer.cornerRadius = 20
+        imageUser.layer.cornerRadius = 30
+        imageUser.layer.masksToBounds = true
+        imageUser.contentMode = .scaleAspectFill
+        imageUser.image = UIImage(named: "user")
+        
+//        imageUser.image.layer.cor
+        
+        
         return imageUser
         
     }()
@@ -73,7 +79,7 @@ class MenuViewController: UIViewController {
         menuCollectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: "MenuCollectionViewCell")
         menuCollectionView.backgroundColor = .white
         menuCollectionView.showsVerticalScrollIndicator = false
-
+        
         return menuCollectionView
     }()
     
@@ -93,10 +99,10 @@ class MenuViewController: UIViewController {
         plantasCollecctionView.register(PlantasCollectionViewCell.self, forCellWithReuseIdentifier: "PlantasCollectionViewCell")
         plantasCollecctionView.backgroundColor = .white
         plantasCollecctionView.backgroundColor = .white
-
+        
         return plantasCollecctionView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createViews()
@@ -105,7 +111,7 @@ class MenuViewController: UIViewController {
         menuCollectionView.delegate = self
         plantasCollecctionView.dataSource = self
         plantasCollecctionView.delegate = self
-        userNameLabel.text = "Olá, \(name ?? "")"
+        userNameLabel.text = "Olá,\n\(name ?? "")"
     }
     
     func createViews() {
@@ -128,22 +134,22 @@ class MenuViewController: UIViewController {
             self.container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             
             self.userNameLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 80),
-            self.userNameLabel.trailingAnchor.constraint(equalTo: imageUser.trailingAnchor, constant: -150),
+            self.userNameLabel.trailingAnchor.constraint(equalTo: imageUser.trailingAnchor, constant: -100),
             self.userNameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 33),
             
             
             
-            self.subtitleLabel.topAnchor.constraint(equalTo: userNameLabel.topAnchor, constant: 80),
+            self.subtitleLabel.topAnchor.constraint(equalTo: userNameLabel.topAnchor, constant: 70),
             self.subtitleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -125),
             self.subtitleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 33),
             
             
-        
+            
             self.imageUser.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -33),
             self.imageUser.topAnchor.constraint(equalTo: container.topAnchor, constant: 85),
-//            self.imageUser.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor, constant: 80),
-            self.imageUser.widthAnchor.constraint(equalToConstant: 40),
-            self.imageUser.heightAnchor.constraint(equalToConstant: 40),
+            //            self.imageUser.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor, constant: 80),
+            self.imageUser.widthAnchor.constraint(equalToConstant: 60),
+            self.imageUser.heightAnchor.constraint(equalToConstant: 60),
             
             self.containerMenuCollectionView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
             self.containerMenuCollectionView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
@@ -176,10 +182,10 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return localPlant.count
         }
         else {
-            return imageMenu.count
+            return database.imageMenu.count
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == menuCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as? MenuCollectionViewCell else {return UICollectionViewCell()}
@@ -189,23 +195,32 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlantasCollectionViewCell", for: indexPath) as? PlantasCollectionViewCell else  {return UICollectionViewCell()}
-//            cell.setupViewCell(with: PlantMenu)
-            cell.setupViewCell(with: imageMenu [indexPath.row])
+            //            cell.setupViewCell(with: PlantMenu)
+            cell.setupViewCell(with: database.imageMenu [indexPath.row])
             
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected Cell: \(indexPath.row)")
+//        tableView.deselectRow(at: indexPath, animated: true)
+        let menuVC = DetailsPlantViewController()
+        menuVC.modalPresentationStyle = .fullScreen
+        menuVC.plant = database.imageMenu[indexPath.row]
+        self.navigationController?.pushViewController(menuVC, animated: true)
+
+        
+//        print("Selected Cell: \(indexPath.row)")
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == menuCollectionView {
-
+            
             return CGSize(width: 80.0, height: 40)
-
+            
         } else {
+
             return CGSize(width: 148, height: 154)
         }
     }
 }
+

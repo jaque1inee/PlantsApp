@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		415D6DCB293929AA009D3809 /* MyPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D6DCA293929AA009D3809 /* MyPlantsViewController.swift */; };
+		415D6DCD29392BA8009D3809 /* MyPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D6DCC29392BA8009D3809 /* MyPlantsTableViewCell.swift */; };
+		415D6DD229399D0F009D3809 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D6DD129399D0F009D3809 /* ConfirmationViewController.swift */; };
+		415D6DD42939A348009D3809 /* MyPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D6DD32939A348009D3809 /* MyPlants.swift */; };
+		415D6DD7293D95DA009D3809 /* RegisterPlantPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D6DD6293D95DA009D3809 /* RegisterPlantPresenter.swift */; };
+		415D6DD9293D9A4D009D3809 /* DetailsPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D6DD8293D9A4D009D3809 /* DetailsPlantViewController.swift */; };
+		415F04092948177E0002DAEE /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F04082948177E0002DAEE /* DataBase.swift */; };
 		417EE10429316AA000C3C86A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE10329316AA000C3C86A /* AppDelegate.swift */; };
 		417EE10629316AA000C3C86A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE10529316AA000C3C86A /* SceneDelegate.swift */; };
-		417EE10829316AA000C3C86A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE10729316AA000C3C86A /* ViewController.swift */; };
+		417EE10829316AA000C3C86A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE10729316AA000C3C86A /* OnboardingViewController.swift */; };
 		417EE10D29316AA100C3C86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417EE10C29316AA100C3C86A /* Assets.xcassets */; };
 		417EE11029316AA100C3C86A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417EE10E29316AA100C3C86A /* LaunchScreen.storyboard */; };
 		417EE11B29316AA100C3C86A /* SecundProjectViewCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE11A29316AA100C3C86A /* SecundProjectViewCodeTests.swift */; };
@@ -21,11 +28,10 @@
 		417EE14329344B1800C3C86A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE14229344B1800C3C86A /* UIColor+Extensions.swift */; };
 		417EE15729344D6600C3C86A /* Jost600Semi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 417EE14529344D6600C3C86A /* Jost600Semi.otf */; };
 		417EE16B293450F000C3C86A /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE16A293450F000C3C86A /* PlantModel.swift */; };
-		417EE16D2934E67E00C3C86A /* LocalPlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE16C2934E67E00C3C86A /* LocalPlantModel.swift */; };
 		417EE17A2935A42C00C3C86A /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE1792935A42C00C3C86A /* RegisterUserViewController.swift */; };
-		417EE17D2936595000C3C86A /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 417EE17B2936595000C3C86A /* Database.xcdatamodeld */; };
 		417EE17F29365A4800C3C86A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE17E29365A4800C3C86A /* DataManager.swift */; };
 		417EE18129365ADA00C3C86A /* RegisterUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EE18029365ADA00C3C86A /* RegisterUserPresenter.swift */; };
+		4185CA3329481C6100DBD58C /* MyPlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185CA3229481C6100DBD58C /* MyPlantsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +52,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		415D6DCA293929AA009D3809 /* MyPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsViewController.swift; sourceTree = "<group>"; };
+		415D6DCC29392BA8009D3809 /* MyPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewCell.swift; sourceTree = "<group>"; };
+		415D6DD129399D0F009D3809 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		415D6DD32939A348009D3809 /* MyPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlants.swift; sourceTree = "<group>"; };
+		415D6DD6293D95DA009D3809 /* RegisterPlantPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantPresenter.swift; sourceTree = "<group>"; };
+		415D6DD8293D9A4D009D3809 /* DetailsPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPlantViewController.swift; sourceTree = "<group>"; };
+		415F04082948177E0002DAEE /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		417EE10029316AA000C3C86A /* PlantsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		417EE10329316AA000C3C86A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		417EE10529316AA000C3C86A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		417EE10729316AA000C3C86A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		417EE10729316AA000C3C86A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		417EE10C29316AA100C3C86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		417EE10F29316AA100C3C86A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		417EE11129316AA100C3C86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,11 +77,10 @@
 		417EE14229344B1800C3C86A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		417EE14529344D6600C3C86A /* Jost600Semi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Jost600Semi.otf; sourceTree = "<group>"; };
 		417EE16A293450F000C3C86A /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
-		417EE16C2934E67E00C3C86A /* LocalPlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPlantModel.swift; sourceTree = "<group>"; };
 		417EE1792935A42C00C3C86A /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
-		417EE17C2936595000C3C86A /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		417EE17E29365A4800C3C86A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		417EE18029365ADA00C3C86A /* RegisterUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserPresenter.swift; sourceTree = "<group>"; };
+		4185CA3229481C6100DBD58C /* MyPlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +108,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		415D6DC42937BF2E009D3809 /* DetaillsPlant */ = {
+			isa = PBXGroup;
+			children = (
+				415D6DD5293D935E009D3809 /* Presenter */,
+				415D6DC52937BF39009D3809 /* View */,
+			);
+			path = DetaillsPlant;
+			sourceTree = "<group>";
+		};
+		415D6DC52937BF39009D3809 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				415D6DD8293D9A4D009D3809 /* DetailsPlantViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		415D6DC829392993009D3809 /* MyPlants */ = {
+			isa = PBXGroup;
+			children = (
+				4185CA3129481B8E00DBD58C /* Presenter */,
+				415D6DC929392999009D3809 /* View */,
+			);
+			path = MyPlants;
+			sourceTree = "<group>";
+		};
+		415D6DC929392999009D3809 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				415D6DCA293929AA009D3809 /* MyPlantsViewController.swift */,
+				415D6DCC29392BA8009D3809 /* MyPlantsTableViewCell.swift */,
+				415D6DD129399D0F009D3809 /* ConfirmationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		415D6DD5293D935E009D3809 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				415D6DD6293D95DA009D3809 /* RegisterPlantPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		417EE0F729316AA000C3C86A = {
 			isa = PBXGroup;
 			children = (
-				417EE17B2936595000C3C86A /* Database.xcdatamodeld */,
 				417EE10229316AA000C3C86A /* PlantsApp */,
 				417EE11929316AA100C3C86A /* PlantsAppTests */,
 				417EE12329316AA100C3C86A /* PlantsAppUITests */,
@@ -151,15 +206,6 @@
 			path = PlantsAppUITests;
 			sourceTree = "<group>";
 		};
-		417EE135293302C800C3C86A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				417EE136293302E400C3C86A /* MenuCollectionViewCell.swift */,
-				417EE13C2933EB6400C3C86A /* PlantasCollectionViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		417EE14129344B0700C3C86A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				417EE16A293450F000C3C86A /* PlantModel.swift */,
-				417EE16C2934E67E00C3C86A /* LocalPlantModel.swift */,
+				415D6DD32939A348009D3809 /* MyPlants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,9 +235,10 @@
 		417EE16F293572DF00C3C86A /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				415D6DC829392993009D3809 /* MyPlants */,
+				415D6DC42937BF2E009D3809 /* DetaillsPlant */,
 				417EE1762935A36300C3C86A /* Register */,
 				417EE16E2934F31F00C3C86A /* MenuPrinicipal */,
-				417EE135293302C800C3C86A /* Cells */,
 				417EE170293572F200C3C86A /* Onboarding */,
 			);
 			path = Application;
@@ -200,7 +247,7 @@
 		417EE170293572F200C3C86A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				417EE10729316AA000C3C86A /* ViewController.swift */,
+				417EE10729316AA000C3C86A /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -216,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				417EE1332931BE7000C3C86A /* MenuViewController.swift */,
+				417EE136293302E400C3C86A /* MenuCollectionViewCell.swift */,
+				417EE13C2933EB6400C3C86A /* PlantasCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +274,7 @@
 			children = (
 				417EE169293450D700C3C86A /* Model */,
 				417EE17E29365A4800C3C86A /* DataManager.swift */,
+				415F04082948177E0002DAEE /* DataBase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -267,6 +317,14 @@
 				417EE1792935A42C00C3C86A /* RegisterUserViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4185CA3129481B8E00DBD58C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4185CA3229481C6100DBD58C /* MyPlantsPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,18 +458,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417EE10829316AA000C3C86A /* ViewController.swift in Sources */,
+				417EE10829316AA000C3C86A /* OnboardingViewController.swift in Sources */,
+				415D6DCD29392BA8009D3809 /* MyPlantsTableViewCell.swift in Sources */,
 				417EE17F29365A4800C3C86A /* DataManager.swift in Sources */,
 				417EE17A2935A42C00C3C86A /* RegisterUserViewController.swift in Sources */,
 				417EE10429316AA000C3C86A /* AppDelegate.swift in Sources */,
+				415D6DCB293929AA009D3809 /* MyPlantsViewController.swift in Sources */,
 				417EE13D2933EB6400C3C86A /* PlantasCollectionViewCell.swift in Sources */,
 				417EE16B293450F000C3C86A /* PlantModel.swift in Sources */,
-				417EE17D2936595000C3C86A /* Database.xcdatamodeld in Sources */,
 				417EE10629316AA000C3C86A /* SceneDelegate.swift in Sources */,
+				415F04092948177E0002DAEE /* DataBase.swift in Sources */,
+				4185CA3329481C6100DBD58C /* MyPlantsPresenter.swift in Sources */,
+				415D6DD7293D95DA009D3809 /* RegisterPlantPresenter.swift in Sources */,
 				417EE14329344B1800C3C86A /* UIColor+Extensions.swift in Sources */,
-				417EE16D2934E67E00C3C86A /* LocalPlantModel.swift in Sources */,
+				415D6DD42939A348009D3809 /* MyPlants.swift in Sources */,
 				417EE18129365ADA00C3C86A /* RegisterUserPresenter.swift in Sources */,
 				417EE1342931BE7000C3C86A /* MenuViewController.swift in Sources */,
+				415D6DD229399D0F009D3809 /* ConfirmationViewController.swift in Sources */,
+				415D6DD9293D9A4D009D3809 /* DetailsPlantViewController.swift in Sources */,
 				417EE137293302E400C3C86A /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,19 +812,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		417EE17B2936595000C3C86A /* Database.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				417EE17C2936595000C3C86A /* Database.xcdatamodel */,
-			);
-			currentVersion = 417EE17C2936595000C3C86A /* Database.xcdatamodel */;
-			path = Database.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 417EE0F829316AA000C3C86A /* Project object */;
 }
