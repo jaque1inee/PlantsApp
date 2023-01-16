@@ -134,8 +134,6 @@ class MenuViewController: UIViewController {
             self.userNameLabel.trailingAnchor.constraint(equalTo: imageUser.trailingAnchor, constant: -100),
             self.userNameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 33),
             
-            
-            
             self.subtitleLabel.topAnchor.constraint(equalTo: userNameLabel.topAnchor, constant: 70),
             self.subtitleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -125),
             self.subtitleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 33),
